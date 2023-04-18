@@ -74,7 +74,6 @@ assemble_list,states =assembly_transition_matrix()
 for i in range(1,len(matrix)-1):
      assemble_list,states =nextlevel(assemble_list,states)
 
-states
 
 """조립할수 있는 순서를 순서대로 표시"""
 
@@ -85,14 +84,12 @@ for i in range(len(states)):
   sorted_states=["".join(sorted_states)]
   final_states.append(sorted_states[0])
 
-final_states
 
 result = []
 for value in final_states:
     if value not in result:
         result.append(value)
 result.insert(0, 'A/B/C/D')
-result
 
 """매트릭스를 만들고 조합 정보를 기록
 
@@ -100,7 +97,6 @@ result
 
 zeros=np.zeros((len(result),len(result)))
 df=pd.DataFrame(zeros,index=result,columns=result)
-df
 
 for a in  range(len(states)):
   for b in range(len(states)):
